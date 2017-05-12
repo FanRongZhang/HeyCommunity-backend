@@ -32,6 +32,16 @@ Route::group(['middleware' => [], 'prefix' => 'api'], function() {
     Route::controller('system', 'Api\SystemController');
 });
 
+//
+// Api
+// ----------------------------
+Route::group(['middleware' => [], 'prefix' => 'newapi'], function() {
+    Route::get('/', function() {
+        return view('api.index');
+    });
+
+    Route::controller('topic', 'NewApi\TopicController');
+});
 
 //
 // Dashboard
